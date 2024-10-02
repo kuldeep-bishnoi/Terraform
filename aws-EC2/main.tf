@@ -153,11 +153,11 @@ resource "aws_instance" "specific_az_server" {
     tags = {
         Name = "Specific-AZ-Server"
     }
+}
 
-    # Output the instance ID
-    output "specific_az_instance_id" {
-        value = aws_instance.specific_az_server.id
-    }
+# output the instance id
+output "specific_az_instance_id" {
+    value = aws_instance.specific_az_server.id
 }
 
 # Create an EC2 instance with a specific subnet
@@ -168,26 +168,26 @@ resource "aws_instance" "specific_subnet_server" {
     tags = {
         Name = "Specific-Subnet-Server"
     }
-
-    # Output the instance ID
-    output "specific_subnet_instance_id" {
-        value = aws_instance.specific_subnet_server.id
-    }
 }
 
-# Create an EC2 instance with a specific VPC
+# output the instance id
+output "specific_subnet_instance_id" {
+    value = aws_instance.specific_subnet_server.id
+}
+
+# Create an EC2 instance with a specific VPC subnet
 resource "aws_instance" "specific_vpc_server" {
     ami           = "ami-0c55b159cbfafe1f0"
     instance_type = "t2.micro"
-    vpc_id        = "vpc-0123456789abcdefg"
+    subnet_id     = "subnet-0123456789abcdefg" # Replace with your actual subnet ID
     tags = {
         Name = "Specific-VPC-Server"
     }
+}
 
-    # Output the instance ID
-    output "specific_vpc_instance_id" {
-        value = aws_instance.specific_vpc_server.id
-    }
+# Output the instance ID
+output "specific_vpc_instance_id" {
+    value = aws_instance.specific_vpc_server.id
 }
 
 # Create an EC2 instance with a specific IAM role
@@ -198,9 +198,9 @@ resource "aws_instance" "iam_role_server" {
     tags = {
         Name = "IAM-Role-Server"
     }
+}
 
-    # Output the instance ID
-    output "iam_role_instance_id" {
-        value = aws_instance.iam_role_server.id
-    }
+# output the instance id
+output "iam_role_instance_id" {
+    value = aws_instance.iam_role_server.id
 }
