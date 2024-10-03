@@ -9,7 +9,7 @@
 # 3. EC2 instance resource
 # 4. Output values for instance ID and public IP
 #
-# Note: Ensure that the S3 bucket specified in the backend configuration exists 
+# Note: Ensure that the S3 bucket specified in the backend configuration exists
 # and that you have the necessary permissions to access it.
 
 # configure the backend
